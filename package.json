@@ -9,9 +9,26 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.29",
+    "@ai-sdk/react": "^3.0.88",
+    "@coinbase/x402": "^2.1.0",
+    "@privy-io/react-auth": "^3.14.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@x402/core": "^2.3.1",
+    "@x402/evm": "^2.3.1",
+    "@x402/fetch": "^2.3.0",
+    "ai": "^6.0.86",
+    "better-sqlite3": "^12.6.2",
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.574.0",
+    "mongoose": "^9.2.1",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sonner": "^1.7.4",
+    "stripe": "^20.3.1",
+    "twilio": "^5.12.1",
+    "viem": "^2.46.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
