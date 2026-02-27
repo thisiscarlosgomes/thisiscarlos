@@ -62,7 +62,7 @@ export function BeijingTime() {
   const kaomoji = frames[frameIndex % frames.length];
 
   return (
-    <div className="mt-auto flex items-center justify-between gap-4 pt-16 text-sm text-black">
+    <div className="mt-16 mb-6 flex items-center justify-between gap-4 pb-8 text-sm text-black">
       <p className="text-sm font-normal">{time} in Beijing</p>
       <p className="pr-2 text-right text-sm leading-none text-black" aria-hidden="true">
         {kaomoji}
