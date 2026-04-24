@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { GlobalPullRefresh } from "@/app/components/global-pull-refresh";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -77,7 +76,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased lowercase`}>
-        <GlobalPullRefresh />
         <Toaster position="bottom-right" />
         {children}
       </body>

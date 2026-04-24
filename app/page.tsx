@@ -27,7 +27,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <SiteHeader />
+      <SiteHeader showCallButton={false} />
 
       <section className="space-y-6 text-base leading-6 text-zinc-700">
         <p>
