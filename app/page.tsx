@@ -89,7 +89,7 @@ export default function Home() {
           </p> */}
 
           <p>
-            <strong className="font-semibold text-zinc-950">elsewhere:</strong> Maioazul.com · visitmaio.com · Kode.social +++
+            <strong className="font-semibold text-zinc-950">elsewhere:</strong> Maioazul.com · maio.cv · visitmaio.com · Kode.social +++
           </p>
 
          
