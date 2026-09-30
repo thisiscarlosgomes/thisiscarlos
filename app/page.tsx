@@ -29,38 +29,75 @@ export default function Home() {
       />
       <SiteHeader showCallButton={false} />
 
-      <section className="space-y-6 text-base leading-6 text-zinc-700">
-        <p>
-          i&apos;m{" "}
-          <a
-            href="https://twitter.com/carlosecgomes"
-            className="font-medium text-zinc-950 underline underline-offset-4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Carlos
-          </a>
-          . i build at the intersection of crypto x ai / prev. founder at
-          forefront ($2m pre-seed) / 火币网
-        </p>
+      <section className="space-y-6 text-sm leading-6 text-zinc-700">
+        <div className="space-y-2">
+          <p>
+            i&apos;m{" "}
+            <a
+              href="https://twitter.com/carlosecgomes"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Carlos
+            </a>
+            . i build at the intersection of ai x crypto.
+          </p>
 
-        <p>
-          <strong className="font-semibold text-zinc-950">co-creations:</strong> Seedclub, Mintfund, SquiggleDAO +++
-        </p>
+          <p>
+            currently building{" "}
+            <a
+              href="https://terminal.co"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              terminal ai
+            </a>{" "}
+            - financial intelligence that can act.
+          </p>
 
-        <p>
-          <strong className="font-semibold text-zinc-950">angels:</strong> Backdrop, Refraction, Songcamp, Yup,
-          Afropolitan, Syndicate, Cabin, Zypsy, and Chuva.
-        </p>
+           <p>
+            <strong className="font-semibold text-zinc-950">also exploring:</strong> ambitious teams building at the frontier of ai, fintech & crypto.
+          </p>
 
-        <p>
-          <strong className="font-semibold text-zinc-950">current focus:</strong> AI & crypto: learning, building, experimenting, and enjoying the frontier.
-        </p>
 
-        <p>
-          <strong className="font-semibold text-zinc-950">languages:</strong> English, Chinese, Portuguese, Creole 🇨🇻, (bits: Spanish, Italian)
-        </p>
+          <p>
+            previously founded{" "}
+            <a
+              href="https://x.com/forefront__"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @forefront
+            </a>{" "}
+            ($2.1m) /{" "}
+            <span className="text-zinc-950">@huobiglobal</span>
+          </p>
+        </div>
 
+        <div className="space-y-2">
+
+          <p>
+            <strong className="font-semibold text-zinc-950">co-creations:</strong> Seedclub, MintFund, SquiggleDAO +++
+          </p>
+
+          {/* <p>
+            <strong className="font-semibold text-zinc-950">angels:</strong> Backdrop, Refraction, Songcamp, Yup,
+            Afropolitan, Syndicate, Cabin, Zypsy, Chuva.
+          </p> */}
+
+          <p>
+            <strong className="font-semibold text-zinc-950">elsewhere:</strong> Maioazul.com · visitmaio.com · Kode.social +++
+          </p>
+
+         
+          <p>
+            <strong className="font-semibold text-zinc-950">languages:</strong> English, Chinese, Portuguese · bits of Spanish & Italian
+          </p>
+
+        </div>
       </section>
 
       <BeijingTime />
