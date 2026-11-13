@@ -890,11 +890,11 @@ function CallPageWithPrivy() {
   }
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
+    <main className="site-page mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
       <SiteHeader showCallButton={false} showPitchButton />
 
       <section className="rounded-lg border border-zinc-200 p-4">
-        <h2 className="text-sm font-semibold text-zinc-900">Call Carlitos</h2>
+        <h1 className="text-sm font-semibold text-zinc-900">Call Carlitos</h1>
         <p className="mt-2 text-sm text-zinc-700">
           basically a digital mini-me that loves to chat about tech, life, ideas, and anything in between.
           It&apos;s like calling me, but with zero social anxiety.
@@ -949,7 +949,7 @@ function CallPageWithPrivy() {
         {shouldShowAccessCode ? (
           <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
             <p className="text-xs font-semibold uppercase tracking-wide text-zinc-700">Access code</p>
-            <div className="mt-2 flex items-center justify-between gap-2">
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-y-2 gap-2">
               <p className="text-sm font-semibold text-zinc-900">{pin || "------"}</p>
               <button
                 type="button"
@@ -982,7 +982,7 @@ function CallPageWithPrivy() {
       </section>
 
       <section className="mt-4 rounded-lg border border-zinc-200 p-4">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-y-2 gap-3">
           <h2 className="text-sm font-semibold text-zinc-900">purchase calls</h2>
           <p className="text-xs font-mono text-zinc-500">powered by x402</p>
         </div>
@@ -1120,7 +1120,7 @@ function CallPageWithPrivy() {
                 key={`${caller.label}-${caller.lastCallAtIso}-${index}`}
                 className="rounded-md border border-zinc-100 px-3 py-2"
               >
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-y-2">
                   <span className="text-xs font-medium text-zinc-900 font-mono tabular-nums tracking-wide">
                     {caller.label}
                   </span>
@@ -1161,7 +1161,7 @@ function CallPageWithPrivy() {
                 key={`${item.createdAtIso}-${index}`}
                 className="rounded-md border border-zinc-100 px-3 py-2"
               >
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-y-2">
                   <span className="text-xs font-medium text-zinc-900">
                     {item.durationSeconds < 60
                       ? `${item.durationSeconds}s`
@@ -1222,12 +1222,12 @@ export default function CallPageClient() {
 
   if (!appId) {
     return (
-      <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
+      <main className="site-page mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
         <SiteHeader showCallButton={false} showPitchButton />
         <section className="rounded-lg border border-zinc-200 p-4">
-          <h2 className="text-sm font-semibold text-zinc-900">wallet payments unavailable</h2>
+          <h1 className="text-sm font-semibold text-zinc-900">calls are temporarily unavailable</h1>
           <p className="mt-2 text-sm text-zinc-700">
-            set <code>NEXT_PUBLIC_PRIVY_APP_ID</code> to enable wallet connect and x402 payments.
+            Please try again later. You can still read the blog or <a href="/p" className="underline underline-offset-4">submit a pitch</a>.
           </p>
         </section>
       </main>

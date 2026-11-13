@@ -1,25 +1,32 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://thisiscarlos.org";
-  const now = new Date();
+import { getPublishedPosts } from "@/lib/blog/posts";
+
+export const dynamic = "force-dynamic";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts();
+  const base = "https://carlos.cv";
 
   return [
+    { url: `${base}/wiki`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.8 },
+    ...posts.map((post) => ({
+      url: `${base}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+      priority: 0.7,
+    })),
     {
       url: `${base}/`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${base}/c`,
-      lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${base}/p`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
     },

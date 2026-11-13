@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { getRecentPublishedPosts } from "@/lib/blog/posts";
 import { SiteHeader } from "@/app/components/site-header";
 import { BeijingTime } from "@/app/components/beijing-time";
 
@@ -7,22 +9,25 @@ const structuredData = {
     {
       "@type": "Person",
       name: "Carlos Gomes",
-      url: "https://thisiscarlos.org",
+      url: "https://carlos.cv",
       sameAs: ["https://twitter.com/carlosecgomes"],
     },
     {
       "@type": "WebSite",
       name: "Carlos",
-      url: "https://thisiscarlos.org",
+      url: "https://carlos.cv",
       inLanguage: "en",
     },
   ],
 };
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const posts = await getRecentPublishedPosts();
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-6 pb-20 pt-10 sm:px-10">
+    <main style={{ paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }} className="site-page mx-auto flex min-h-screen w-full max-w-3xl flex-col px-6 pb-20 pt-10 sm:px-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -100,6 +105,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-labelledby="thoughts-heading" className="mt-10 text-sm leading-6">
+        <h2 id="thoughts-heading" className="font-semibold text-zinc-950">thoughts</h2>
+        {posts.length ? (
+          <ul className="mt-1 space-y-1">
+            {posts.map((post) => (
+              <li key={String(post._id)}>
+                <Link href={`/blog/${post.slug}`} className="inline-flex min-h-11 items-center py-1 text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-950">
+                  {post.title.toLowerCase()}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : <p className="mt-2 text-zinc-500">more soon.</p>}
+      </section>
+
+      <Link href="/wiki" className="mt-8 w-fit text-sm text-zinc-500 underline underline-offset-4 hover:text-zinc-950">wiki</Link>
       <BeijingTime />
     </main>
   );

@@ -129,7 +129,7 @@ export default function PitchPage() {
   }
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
+    <main className="site-page mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
       <SiteHeader showCallButton={false} />
 
       <section className="rounded-lg border border-zinc-200 p-4">
@@ -144,6 +144,7 @@ export default function PitchPage() {
               <span className="text-xs text-zinc-600">name</span>
               <input
                 required
+                autoComplete="name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm outline-none ring-zinc-900 focus:ring-2"
@@ -154,6 +155,7 @@ export default function PitchPage() {
               <input
                 required
                 type="email"
+                autoComplete="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm outline-none ring-zinc-900 focus:ring-2"
@@ -249,7 +251,7 @@ export default function PitchPage() {
           </button>
         </form>
 
-        {status ? <p className="mt-3 text-xs text-zinc-600">{status}</p> : null}
+        {status ? <p role="status" className="mt-3 text-xs text-zinc-600">{status}</p> : null}
       </section>
     </main>
   );

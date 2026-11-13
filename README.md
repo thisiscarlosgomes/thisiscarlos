@@ -1,4 +1,4 @@
-# carlos.org
+# carlos.cv
 
 Minimal Next.js personal site with an additional `/c` experience for:
 - free web text chat
@@ -335,3 +335,15 @@ When evidence is linked to a belief:
 - URL content is fetched and summarized.
 - Stance is classified (`supports`, `challenges`, `neutral`).
 - Belief confidence is recalibrated and reason text is updated.
+
+## Blog
+
+- `/blog` lists published posts; `/blog/[slug]` renders each article on the server.
+- `/admin` uses the existing owner password (`VOICE_NOTES_OWNER_PASSWORD`) and login at `/lg`.
+- Write Markdown, preview it, save drafts, publish, update, or unpublish. URLs are locked after first publication to preserve shared links.
+- Images use standard `![alt text](https://...)` syntax. Audio uses `[Listen](https://... "audio")`. The editor inserts both formats.
+- Upload JPG, PNG, WebP, GIF, MP3, M4A, WAV, OGG, AAC or WebM files up to 4 MB. Larger recordings can use an HTTPS media URL. Uploaded media is public to anyone with its link, even before publication.
+- Posts and media use the existing MongoDB connection (`MONGODB_URI`), in the `blogposts` and `blogmedias` collections. No additional storage provider is needed.
+- Posts include canonical URLs, Open Graph/Twitter metadata, BlogPosting structured data, and sitemap entries. Draft and admin pages are not indexed.
+- Local development uses the isolated `thisiscarlos_blog_dev` database. Local posts are not production posts.
+- With the local server running, run `node scripts/blog-smoke.mjs` to verify auth, drafts, publication, uploads, audio ranges, SEO and unpublishing. It refuses to run against other databases and removes its fixtures afterward.

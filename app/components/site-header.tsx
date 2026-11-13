@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -19,10 +19,12 @@ const LOGO_SIZE = 28;
 const PIXEL_GRID = 32;
 
 function PixelLogo() {
+  const reducedMotion = useReducedMotion();
   const [pixels, setPixels] = useState<Pixel[] | null>(null);
   const [replayCount, setReplayCount] = useState(0);
 
   useEffect(() => {
+    if (reducedMotion) return;
     let mounted = true;
     const img = new Image();
     img.src = "/punk-logo-24.png";
@@ -70,10 +72,10 @@ function PixelLogo() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [reducedMotion]);
 
   const cellSize = LOGO_SIZE / PIXEL_GRID;
-  const hasPixels = Array.isArray(pixels) && pixels.length > 0;
+  const hasPixels = !reducedMotion && Array.isArray(pixels) && pixels.length > 0;
 
   return (
     <div
@@ -142,16 +144,17 @@ export function SiteHeader({
   showCallsLink = true,
 }: SiteHeaderProps) {
   const linkActionClass =
-    "inline-flex items-center text-sm font-medium underline underline-offset-4 text-zinc-900";
+    "inline-flex min-h-11 items-center text-sm font-medium underline underline-offset-4 text-zinc-900";
 
   return (
-    <header className="mb-10 flex items-center justify-between gap-4">
-      <Link href="/" className="flex items-center gap-2">
+    <header className="site-header mb-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:mb-10">
+      <Link href="/" aria-label="Carlos home" className="flex min-h-11 min-w-11 shrink-0 items-center gap-2">
         <PixelLogo />
         <span className="sr-only">Carlos</span>
       </Link>
 
-      <div className="flex items-center gap-2">
+      <nav aria-label="Main navigation" className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
+        <Link href="/blog" className={linkActionClass}>blog</Link>
         {showPitchButton ? (
           <span className="inline-flex items-center gap-4">
             {showCallsLink ? (
@@ -173,7 +176,7 @@ export function SiteHeader({
             Call me
           </Link>
         ) : null}
-      </div>
+      </nav>
     </header>
   );
 }

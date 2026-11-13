@@ -27,21 +27,26 @@ export default function VoiceNotesLoginPage() {
 
       const params = new URLSearchParams(window.location.search);
       const nextPath = params.get("next") || "/v";
-      window.location.href = nextPath;
+      window.location.href = nextPath.startsWith("/") && !nextPath.startsWith("//") && !nextPath.includes("\\") ? nextPath : "/admin";
+    } catch {
+      setError("Unable to sign in. Check your connection and try again.");
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-md items-center px-6 py-10">
+    <main className="site-page mx-auto flex min-h-screen w-full max-w-md items-center px-6 py-10">
       <section className="w-full rounded-2xl border border-zinc-200 bg-white p-6">
-        <h1 className="text-lg font-semibold text-zinc-900">Voice Notes Access</h1>
+        <h1 className="text-lg font-semibold text-zinc-900">Owner access</h1>
         <p className="mt-1 text-sm text-zinc-600">Owner-only page. Enter password to continue.</p>
 
         <form onSubmit={onSubmit} className="mt-4 space-y-3">
           <input
             type="password"
+            aria-label="Owner password"
+            autoComplete="current-password"
+            aria-describedby={error ? "login-error" : undefined}
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             className="block w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm text-zinc-900 outline-none ring-zinc-900 focus:ring-2"
@@ -57,7 +62,7 @@ export default function VoiceNotesLoginPage() {
           </button>
         </form>
 
-        {error ? <p className="mt-3 text-sm text-red-600">{error}</p> : null}
+        {error ? <p id="login-error" role="alert" className="mt-3 text-sm text-red-600">{error}</p> : null}
       </section>
     </main>
   );

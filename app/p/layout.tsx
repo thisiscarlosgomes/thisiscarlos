@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "pitch me",
     description: "submit your startup pitch for review by Carlos.",
-    url: "https://thisiscarlos.org/p",
+    url: "https://carlos.cv/p",
   },
 };
 

@@ -628,10 +628,10 @@ export default function VoiceNotesPage() {
   });
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-2xl px-6 pb-20 pt-8 sm:px-8">
-      <header className="mb-6 flex items-center justify-between">
+    <main className="site-page mx-auto min-h-screen w-full max-w-2xl px-6 pb-20 pt-8 sm:px-8">
+      <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-semibold text-zinc-900">Voice Notes</h1>
+          <h1 className="text-sm font-semibold text-zinc-900">Voice Notes</h1>
           <span className="rounded-full border border-zinc-300 px-2 py-0.5 text-[11px] font-semibold text-zinc-600">
             conflicts: {conflictCount}
           </span>
@@ -718,7 +718,7 @@ export default function VoiceNotesPage() {
             <div className="mt-3 space-y-2">
               {digest.items.slice(0, 5).map((item) => (
                 <div key={`${item.topic}:${item.changedAt}`} className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-xs font-semibold text-zinc-900">{item.topic}</p>
                     <p className="text-[11px] text-zinc-500">{formatTimeAgo(item.changedAt)}</p>
                   </div>
@@ -745,7 +745,7 @@ export default function VoiceNotesPage() {
           <div className="space-y-2">
             {timeline.slice(-12).reverse().map((item) => (
               <article key={item.id} className="rounded-2xl border border-zinc-200 bg-white p-3">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-xs font-semibold text-zinc-900">{item.topic}</p>
                   <p className="text-[11px] text-zinc-500">{item.status}</p>
                 </div>
@@ -772,7 +772,7 @@ export default function VoiceNotesPage() {
           <div className="space-y-2">
             {toolMetrics.tools.map((row) => (
               <article key={row.tool} className="rounded-2xl border border-zinc-200 bg-white p-3">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-xs font-semibold text-zinc-900">{row.tool}</p>
                   <p className="text-[11px] text-zinc-500">{row.total} calls</p>
                 </div>
@@ -832,7 +832,7 @@ export default function VoiceNotesPage() {
           <div className="space-y-2">
             {evolutionEvents.slice(0, 10).map((event, idx) => (
               <article key={`${event.beliefId}-${event.createdAt}-${idx}`} className="rounded-2xl border border-zinc-200 bg-white p-3">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-xs font-semibold text-zinc-900">{event.topic}</p>
                   <p className="text-[11px] text-zinc-500">{event.eventType}</p>
                 </div>
@@ -893,7 +893,7 @@ export default function VoiceNotesPage() {
 
             return (
               <article key={belief.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-sm font-semibold text-zinc-900">{belief.topic}</p>
                   <span className="text-xs text-zinc-500">{belief.status}</span>
                 </div>
@@ -994,7 +994,7 @@ export default function VoiceNotesPage() {
                     <div className="mt-2 space-y-2">
                       {rows.slice(0, 5).map((row) => (
                         <div key={row.id} className="rounded-lg border border-zinc-200 bg-white p-2">
-                          <div className="flex items-center justify-between gap-2">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
                             <a
                               href={row.url}
                               target="_blank"
@@ -1033,7 +1033,7 @@ export default function VoiceNotesPage() {
         ) : (
           notes.map((note) => (
             <article key={note.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm font-semibold text-zinc-900">{note.summary}</p>
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-zinc-500">{formatTimeAgo(note.createdAt)}</span>

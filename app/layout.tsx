@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     template: "%s | Carlos",
   },
   description: "call Carlos AI, explore current thinking, and submit your pitch.",
-  metadataBase: new URL("https://thisiscarlos.org"),
+  metadataBase: new URL("https://carlos.cv"),
   alternates: {
     canonical: "/",
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
-    url: "https://thisiscarlos.org",
+    url: "https://carlos.cv",
     siteName: "Carlos",
     title: "Carlos",
     description: "call Carlos AI, explore current thinking, and submit your pitch.",

@@ -48,7 +48,7 @@ export const CREDITS_PER_MINUTE = Math.max(
 );
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.SITE_URL ?? "https://carlos.cv";
 
 export const ELEVENLABS_DESTINATION = process.env.ELEVENLABS_AGENT_DESTINATION ?? "";
 export const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY ?? "";

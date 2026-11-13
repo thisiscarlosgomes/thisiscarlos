@@ -25,9 +25,14 @@
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-tweet": "^3.3.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
     "sonner": "^1.7.4",
     "stripe": "^20.3.1",
     "twilio": "^5.12.1",
+    "unified": "^11.0.5",
     "viem": "^2.46.2"
   },
   "devDependencies": {

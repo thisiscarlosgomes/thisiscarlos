@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "call",
     description: "call Carlos AI to chat about tech, life, ideas, and current projects.",
-    url: "https://thisiscarlos.org/c",
+    url: "https://carlos.cv/c",
   },
 };
 

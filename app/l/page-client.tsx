@@ -19,6 +19,7 @@ type CallStatusResponse = {
 export default function LeaderboardPageClient() {
   const [callers, setCallers] = useState<RecentCallersResponse["callers"]>([]);
   const [callsInFlight, setCallsInFlight] = useState(0);
+  const [loadError, setLoadError] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [nowMs, setNowMs] = useState(Date.now());
   const inCallToastIdRef = useRef<string | number | null>(null);
@@ -49,9 +50,11 @@ export default function LeaderboardPageClient() {
         const response = await fetch("/api/call/recent-callers?limit=100", {
           cache: "no-store",
         });
-        if (!response.ok) return;
+        if (!response.ok) throw new Error("Could not load calls");
         const data = (await response.json()) as RecentCallersResponse;
-        if (active) setCallers(data.callers ?? []);
+        if (active) { setCallers(data.callers ?? []); setLoadError(false); }
+      } catch {
+        if (active) setLoadError(true);
       } finally {
         if (active) setLoaded(true);
       }
@@ -99,11 +102,12 @@ export default function LeaderboardPageClient() {
   }
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
+    <main className="site-page mx-auto min-h-screen w-full max-w-3xl px-6 pb-20 pt-10 sm:px-10">
       <SiteHeader showCallButton={false} showPitchButton showCallsLink={false} />
 
       <section className="mt-4 rounded-lg border border-zinc-200 p-4">
         <h1 className="text-sm font-semibold text-zinc-900">All calls (anonymous)</h1>
+        {loadError ? <p role="status" className="mt-2 text-sm text-zinc-600">Could not refresh calls. Retrying automatically…</p> : null}
         {!loaded ? (
           <div className="mt-3 animate-pulse space-y-2">
             <div className="h-14 rounded-md bg-zinc-100" />
@@ -119,7 +123,7 @@ export default function LeaderboardPageClient() {
                 key={`${caller.label}-${caller.lastCallAtIso}-${index}`}
                 className="rounded-md border border-zinc-100 px-3 py-2"
               >
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-y-2">
                   <span className="text-xs font-medium text-zinc-900 font-mono tabular-nums tracking-wide">
                     {caller.label}
                   </span>
