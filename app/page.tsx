@@ -85,6 +85,27 @@ export default async function Home() {
         <div className="space-y-2">
 
           <p>
+            <strong className="font-semibold text-zinc-950">latest:</strong>{" "}
+            <a
+              href="https://heycast.xyz"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              heycast.xyz
+            </a>
+            {" "}·{" "}
+            <a
+              href="https://naundi.com"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              naundi.com
+            </a>
+          </p>
+
+          <p>
             <strong className="font-semibold text-zinc-950">co-creations:</strong> Seedclub, MintFund, SquiggleDAO +++
           </p>
 
