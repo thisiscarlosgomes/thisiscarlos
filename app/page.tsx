@@ -63,7 +63,7 @@ export default async function Home() {
           </p>
 
            <p>
-            <strong className="font-semibold text-zinc-950">also exploring:</strong> ambitious teams building at the frontier of ai, fintech & crypto.
+            <strong className="font-semibold text-zinc-950">looking for new positions:</strong> ambitious teams building at the frontier of ai, fintech & crypto.
           </p>
 
 
@@ -94,7 +94,25 @@ export default async function Home() {
           </p> */}
 
           <p>
-            <strong className="font-semibold text-zinc-950">elsewhere:</strong> Maioazul.com · maio.cv · visitmaio.com · Kode.social +++
+            <strong className="font-semibold text-zinc-950">elsewhere:</strong>{" "}
+            <a
+              href="https://maio.cv"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              maio.cv
+            </a>
+            {" "}·{" "}
+            <a
+              href="https://kode.social"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kode.social
+            </a>
+            {" "}+++
           </p>
 
          
@@ -120,7 +138,6 @@ export default async function Home() {
         ) : <p className="mt-2 text-zinc-500">more soon.</p>}
       </section>
 
-      <Link href="/wiki" className="mt-8 w-fit text-sm text-zinc-500 underline underline-offset-4 hover:text-zinc-950">wiki</Link>
       <BeijingTime />
     </main>
   );

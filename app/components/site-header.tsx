@@ -155,6 +155,9 @@ export function SiteHeader({
 
       <nav aria-label="Main navigation" className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
         <Link href="/blog" className={linkActionClass}>blog</Link>
+        <a href="mailto:hi@carlos.cv?body=hi%20carlos" className={linkActionClass}>
+          hi@carlos.cv
+        </a>
         {showPitchButton ? (
           <span className="inline-flex items-center gap-4">
             {showCallsLink ? (
