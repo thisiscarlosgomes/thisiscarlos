@@ -94,7 +94,7 @@ export default async function Home() {
           </p> */}
 
           <p>
-            <strong className="font-semibold text-zinc-950">elsewhere:</strong> Maioazul.com ·{" "}
+            <strong className="font-semibold text-zinc-950">elsewhere:</strong>{" "}
             <a
               href="https://maio.cv"
               className="font-medium text-zinc-950 underline underline-offset-4"
@@ -103,7 +103,7 @@ export default async function Home() {
             >
               maio.cv
             </a>
-            {" "}· visitmaio.com ·{" "}
+            {" "}·{" "}
             <a
               href="https://kode.social"
               className="font-medium text-zinc-950 underline underline-offset-4"
