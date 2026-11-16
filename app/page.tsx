@@ -67,6 +67,18 @@ export default async function Home() {
             ($2.1m) /{" "}
             <span className="text-zinc-950">@huobiglobal</span>
           </p>
+
+          <p>
+            ms in computer science at{" "}
+            <a
+              href="https://english.blcu.edu.cn/"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              beijing language and culture university
+            </a>
+          </p>
         </div>
 
         <div className="space-y-2">
