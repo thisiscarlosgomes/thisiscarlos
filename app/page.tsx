@@ -87,6 +87,15 @@ export default async function Home() {
           <p>
             <strong className="font-semibold text-zinc-950">latest:</strong>{" "}
             <a
+              href="https://joinlumi.xyz"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lumi
+            </a>
+            {" "}·{" "}
+            <a
               href="https://heycast.xyz"
               className="font-medium text-zinc-950 underline underline-offset-4"
               target="_blank"
