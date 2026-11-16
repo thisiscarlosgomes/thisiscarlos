@@ -69,15 +69,7 @@ export default async function Home() {
           </p>
 
           <p>
-            ms in computer science at{" "}
-            <a
-              href="https://english.blcu.edu.cn/"
-              className="font-medium text-zinc-950 underline underline-offset-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              beijing language and culture university
-            </a>
+            ms in computer science at beijing language and culture university
           </p>
         </div>
 
