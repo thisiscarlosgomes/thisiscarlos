@@ -49,19 +49,6 @@ export default async function Home() {
             . i build at the intersection of ai x crypto.
           </p>
 
-          <p>
-            currently building{" "}
-            <a
-              href="https://terminal.co"
-              className="font-medium text-zinc-950 underline underline-offset-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              terminal ai
-            </a>{" "}
-            - financial intelligence that can act.
-          </p>
-
            <p>
             <strong className="font-semibold text-zinc-950">looking for new positions:</strong> ambitious teams building at the frontier of ai, fintech & crypto.
           </p>
@@ -93,6 +80,15 @@ export default async function Home() {
               rel="noopener noreferrer"
             >
               Lumi
+            </a>
+            {" "}·{" "}
+            <a
+              href="https://terminal.co"
+              className="font-medium text-zinc-950 underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              terminal.co
             </a>
             {" "}·{" "}
             <a
