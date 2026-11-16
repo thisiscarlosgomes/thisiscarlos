@@ -83,12 +83,12 @@ export default async function Home() {
             </a>
             {" "}·{" "}
             <a
-              href="https://terminal.co"
+              href="https://ai.terminal.co/"
               className="font-medium text-zinc-950 underline underline-offset-4"
               target="_blank"
               rel="noopener noreferrer"
             >
-              terminal.co
+              ai.terminal.co
             </a>
             {" "}·{" "}
             <a
