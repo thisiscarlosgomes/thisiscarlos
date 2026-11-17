@@ -50,7 +50,7 @@ export default async function Home() {
           </p>
 
            <p>
-            <strong className="font-semibold text-zinc-950">looking for new positions:</strong> ambitious teams building at the frontier of ai, fintech & crypto.
+            <strong className="font-semibold text-zinc-950">exploring:</strong> product roles at teams building at the frontier of ai, fintech & crypto.
           </p>
 
 
