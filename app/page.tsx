@@ -69,7 +69,7 @@ export default async function Home() {
           </p>
 
           <p>
-            ms in computer science at beijing language and culture university (yes, i speak chinese)
+            ms in computer science at beijing language and culture university
           </p>
         </div>
 
